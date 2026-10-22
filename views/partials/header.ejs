@@ -3,27 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="description" content="Discover delicious African dishes from across the continent.">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" >
+    <title>Afrika Eats | Taste Africa</title> 
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <nav>
-      <a href="/">African Dishes/Food</a>
-      <ul>
+
+    <!-- Navigation --> 
+  <header class="header">
+    <nav class="navbar container">
+       <a href="/" class="logo"> Afrika<span>Eats</span> </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation"> 
+        ☰ 
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dishes">Dishes</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+
         <% if (user) { %>
-        <li>Welcome, <%= user.email %></li>
-        <li>
-          <a href="/logout"> Log out</a>
+        <li class="user-menu">
+          <span class="user-email">Welcome, <%= user.email %></span>
+
+          <button class="logout-btn"><a href="/logout"> Log out</a></button>
         </li>
+        
         <% } else { %>
-        <li>
-          <a href="/login">Log in</a>
-        </li>
-        <li>
-          <a href="/signup" class="btn">Sign up</a>
+        <li class="auth-links">
+          <a href="/login" class="login-btn">Log in</a>
+        
+        
+          <a href="/signup" class="signup-btn">Sign up</a>
         </li>
         <% } %>
       </ul>
     </nav>
-  </body>
+    </header>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle"); 
+  const navLinks = document.getElementById("navLinks"); 
+  
+  menuToggle.addEventListener("click", () => {
+     navLinks.classList.toggle("active"); 
+     }); 
+     
+    document.querySelectorAll(".nav-links a").forEach(link => { 
+      link.addEventListener("click", () => {
+         navLinks.classList.remove("active"); 
+      });
+     });
+</script>
+
+</body>
 </html>

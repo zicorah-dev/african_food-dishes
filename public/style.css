@@ -1,17 +1,13 @@
-body{
-    margin: 20px 40px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    background: #fafafa;
+*{
+   margin: 0; padding: 0; box-sizing: border-box; 
 }
 
-@media (max-width: 600px){
-    body{
-    margin: 10px 20px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    background: #fafafa;
+html{
+    scroll-behavior: smooth;
 }
+
+body{
+   font-family: "DM Sans", sans-serif; color: #25221f; background: #fffaf3; line-height: 1.6;
 }
 
 h1, h2, h3, h4, ul, li, a, p, input, label, button, div, footer{
@@ -26,7 +22,11 @@ ul{
 a{
     text-decoration: none;
 }
-nav{
+
+img { max-width: 100%; display: block; } button, input { font: inherit; }
+
+
+/* nav{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -43,12 +43,13 @@ nav li a{
     display: block;
     padding: 10px 16px;
     letter-spacing: 2px;
-}
+} */
+
 .btn{
     border-radius: 36px;
     background: #FEE996;
 }
-form h2{
+/* form h2{
     font-size: 2.4em;
     font-weight: 906;
     margin-bottom: 40px;
@@ -56,10 +57,15 @@ form h2{
 form{
     width: 360px;
     margin: 0 auto;
+    margin-top: 150px;
     padding: 10px;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.105);
     border-radius: 10px;
     background: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
 }
 input{
     padding: 10px 12px;
@@ -83,14 +89,14 @@ button{
     display: block;
     padding: 10px 16px;
     letter-spacing: 2px;
-}
+} */
 .error{
     color: #ff0699;
     margin: 10px 2px;
     font-size: 0.8em;
     font-weight: bold;
 }
-header{
+/* header{
     display: flex;
     align-items: center;
 }
@@ -129,17 +135,17 @@ header h1{
     color: #999;
 }
 
-}
+} */
 
-header .btn{
+/* header .btn{
     margin-top: 20px;
     padding: 12px 18px;
     text-transform: uppercase;
     font-weight: bold;
     display: inline-block;
     font-size: 0.8em;
-}
-.recipes{
+} */
+/* .recipes{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 30px;
@@ -159,9 +165,298 @@ header .btn{
 .recipe img{
     width: 100px;
     margin: -30px auto 20px;
-}
-footer{
+} */
+/* footer{
     text-align: center;
-    margin-top: 120px;
-    color: #aaa;
+    margin-top: 100px;
+    color: #c8c5c5;
+} */
+
+
+
+
+
+
+
+
+
+
+
+/* ========================= VARIABLES ========================= */
+ :root { --primary: #c95b2c; --primary-dark: #a8451e; --dark: #25221f; --muted: #746e68; --cream: #fffaf3; --light: #f4eadb; --white: #ffffff; --border: #e9ddd0; --radius: 20px; --container: 1180px; }
+
+  /* ========================= GLOBAL ========================= */ 
+  .container { width: min(92%, var(--container)); margin: auto; }
+   .section { padding: 100px 0; } 
+   .eyebrow { display: inline-block; margin-bottom: 12px; color: var(--primary); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; }
+    h1, h2, h3 { line-height: 1.15; } 
+    h1, h2 { font-family: "Playfair Display", serif; } 
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+     .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 25px; border-radius: 100px; font-weight: 700; transition: 0.25s ease; } 
+     .btn-primary { color: var(--white); background: var(--primary); }
+      .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); } 
+      .btn-secondary { border: 1px solid var(--border); background: var(--white); }
+       .btn-secondary:hover { background: var(--light); } 
+       
+/* ========================= NAVIGATION ========================= */ 
+
+.header { position: absolute; top: 0; left: 0; width: 100%; z-index: 20; } 
+.navbar { display: flex; align-items: center; justify-content: space-between; min-height: 82px; } 
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; } 
+.logo span { color: var(--primary); } 
+.nav-links { display: flex; gap: 35px; list-style: none; } 
+.nav-links a { font-size: 0.95rem; font-weight: 600; transition: color 0.2s ease; } 
+.nav-links a:hover { color: var(--primary); } 
+.menu-toggle { display: none; border: 0; background: none; cursor: pointer; font-size: 1.6rem; } 
+
+/* ========================= HERO ========================= */ 
+
+.hero { min-height: 760px; display: flex; align-items: center; padding: 130px 0 80px; overflow: hidden; background: radial-gradient( circle at 85% 35%, #f5ddc4 0, #fffaf3 35%, #fffaf3 70% ); } 
+.hero-content { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; } 
+.hero-text { max-width: 600px; } 
+.hero h1 { max-width: 600px; margin-bottom: 25px; font-size: clamp(3.4rem, 6vw, 5.5rem); letter-spacing: -3px; } 
+.hero h1 span { color: var(--primary); } 
+.hero-text > p { max-width: 520px; margin-bottom: 32px; color: var(--muted); font-size: 1.1rem; } 
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Hero image */ 
+
+.hero-image { position: relative; min-height: 500px; display: flex; align-items: center; justify-content: center; } 
+.image-circle { width: min(440px, 80vw); aspect-ratio: 1; border-radius: 50%; background: linear-gradient( rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15) ), url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85") center / cover; box-shadow: 0 30px 70px rgba(75, 43, 22, 0.18); } 
+.floating-card { position: absolute; left: 0; bottom: 50px; display: flex; align-items: center; gap: 12px; padding: 15px 20px; border: 1px solid rgba(255,255,255,0.7); border-radius: 16px; background: rgba(255,255,255,0.9); box-shadow: 0 15px 40px rgba(60,40,20,0.12); backdrop-filter: blur(10px); } 
+.card-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--light); font-size: 1.3rem; } 
+.floating-card strong, .floating-card small { display: block; } 
+.floating-card strong { font-size: 0.9rem; } 
+.floating-card small { color: var(--muted); font-size: 0.72rem; } 
+
+/* ========================= DISHES ========================= */ 
+
+.dishes { background: var(--white); } 
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 50px; } 
+.section-heading p { max-width: 400px; color: var(--muted); } 
+.dish-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; } 
+.dish-card { overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); transition: 0.3s ease; } 
+.dish-card:hover { transform: translateY(-7px); box-shadow: 0 20px 45px rgba(60,40,20,0.1); } 
+.dish-image { height: 240px; position: relative; background-position: center; background-size: cover; } 
+.dish-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient( to top, rgba(0,0,0,0.25), transparent ); } 
+.jollof { background-image: url("https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=85"); } 
+.suya { background-image: url("https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=700&q=85"); } 
+.bobotie { background-image: url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85"); } 
+.injera { background-image: url("https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=700&q=85"); } 
+.country { position: absolute; z-index: 2; top: 15px; left: 15px; padding: 6px 11px; border-radius: 50px; color: var(--dark); background: rgba(255,255,255,0.9); font-size: 0.7rem; font-weight: 700; } 
+.dish-content { padding: 22px; } .dish-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; } 
+.dish-title h3 { font-family: "Playfair Display", serif; font-size: 1.4rem; } 
+.dish-content p { margin-bottom: 18px; color: var(--muted); font-size: 0.9rem; } 
+.read-more { color: var(--primary); font-size: 0.85rem; font-weight: 700; } 
+
+/* ========================= ABOUT ========================= */ 
+
+.about { background: var(--light); } 
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 100px; } 
+.about-image { position: relative; min-height: 500px; overflow: hidden; border-radius: 30px; background: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85") center / cover; } 
+.about-pattern { position: absolute; inset: 20px; border: 1px solid rgba(255,255,255,0.4); border-radius: 22px; } 
+.about-circle { position: absolute; right: 25px; bottom: 25px; display: grid; place-items: center; width: 90px; height: 90px; border-radius: 50%; background: var(--primary); font-size: 2rem; } 
+.about-text p { max-width: 550px; margin: 22px 0; color: var(--muted); } 
+.about-text .btn { margin-top: 10px; }
+
+/* ========================= NEWSLETTER ========================= */
+
+ .newsletter { padding: 80px 0; color: var(--white); background: var(--dark); } 
+ .newsletter-content { display: flex; align-items: center; justify-content: space-between; gap: 50px; } 
+ .newsletter h2 { margin-bottom: 10px; } 
+ .newsletter p { color: #bdb5ae; } 
+ .newsletter .eyebrow { color: #e5a177; } 
+ .newsletter-form { display: flex; gap: 10px; min-width: min(100%, 480px); } 
+ .newsletter-form input { width: 100%; min-width: 0; padding: 0 20px; border: 1px solid #4a4541; border-radius: 100px; outline: none; color: white; background: #302d2a; } 
+ .newsletter-form input::placeholder { color: #99918a; } 
+ 
+ /* ========================= FOOTER ========================= */
+ 
+ .footer { padding: 35px 0 20px; color: #c0bab4; background: #1e1c1a; } 
+ .footer-content { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-bottom: 25px; } 
+ .footer .logo { color: white; } 
+ .socials { display: flex; gap: 20px; } 
+ .socials a { font-size: 0.8rem; } 
+ .socials a:hover { color: white; } 
+ .copyright { padding-top: 20px; border-top: 1px solid #35322f; text-align: center; font-size: 0.75rem; } 
+ 
+ /* ========================= TABLET ========================= */ 
+ 
+ @media (max-width: 1000px) {
+    
+    .hero-content { gap: 40px; } 
+    .hero h1 { font-size: 4rem; } 
+    .dish-grid { grid-template-columns: repeat(2, 1fr); } 
+    .about-grid { gap: 50px; }
+ } 
+ 
+ /* ========================= MOBILE ========================= */ 
+ 
+ @media (max-width: 700px) {
+    .section { padding: 70px 0; } 
+    
+    /* Navigation */ 
+    
+    .navbar { min-height: 70px; } 
+    .menu-toggle { display: block; } 
+    .nav-links { position: absolute; top: 70px; left: 4%; right: 4%; display: none; flex-direction: column; gap: 0; padding: 10px; border: 1px solid var(--border); border-radius: 16px; background: white; box-shadow: 0 15px 40px rgba(0,0,0,0.1); } 
+    .nav-links.active { display: flex; } 
+    .nav-links li a { display: block; padding: 14px; } 
+    
+    /* Hero */ 
+    
+    .hero { min-height: auto; padding: 110px 0 70px; } 
+    .hero-content { grid-template-columns: 1fr; gap: 45px; } 
+    .hero h1 { font-size: clamp(3rem, 15vw, 4.2rem); letter-spacing: -2px; } 
+    .hero-text > p { font-size: 1rem; } 
+    .hero-image { min-height: 350px; } 
+    .image-circle { width: min(330px, 82vw); } 
+    .floating-card { left: 5%; bottom: 5px; } 
+    
+    /* Section headings */ 
+
+    .section-heading { display: block; margin-bottom: 35px; } 
+    .section-heading p { margin-top: 15px; } 
+    
+    /* Dishes */ 
+    
+    .dish-grid { grid-template-columns: 1fr; } 
+    .dish-image { height: 260px; } 
+    
+    /* About */ 
+    
+    .about-grid { grid-template-columns: 1fr; gap: 45px; } 
+    .about-image { min-height: 350px; } 
+    
+    /* Newsletter */ 
+    
+    .newsletter { padding: 65px 0; } 
+    .newsletter-content { display: block; } 
+    .newsletter-form { min-width: 0; margin-top: 25px; flex-direction: column; } 
+    .newsletter-form input { min-height: 52px; } 
+    
+    /* Footer */ 
+    
+    .footer-content { flex-direction: column; text-align: center; } 
+    .socials { justify-content: center; flex-wrap: wrap; } 
+} 
+
+/* ========================= SMALL PHONES ========================= */ 
+
+@media (max-width: 400px) { 
+    .container { width: 90%; } 
+    .hero-buttons { flex-direction: column; } 
+    .hero-buttons .btn { width: 100%; } 
+    .floating-card { padding: 12px; } 
+    .card-icon { width: 35px; height: 35px; } 
+    .dish-image { height: 220px; } 
+}
+
+/* ================================= AUTHENTICATION PAGES ================================= */ 
+.auth-page { min-height: 100vh; background: #fffaf3; }
+
+/* ================================= AUTH HEADER ================================= */ 
+.auth-header { width: 100%; border-bottom: 1px solid #eadfd3; background: rgba(255, 250, 243, 0.9); } .auth-nav { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; } .auth-nav-link { color: #746e68; font-size: 0.85rem; } .auth-nav-link strong { margin-left: 5px; color: #c95b2c; }
+
+/* ================================= AUTH MAIN ================================= */ 
+.auth-main { min-height: calc(100vh - 80px); display: flex; align-items: center; padding: 60px 0; } .auth-container { width: min(92%, 1050px); min-height: 650px; display: grid; grid-template-columns: 0.9fr 1.1fr; margin: auto; overflow: hidden; border: 1px solid #eadfd3; border-radius: 30px; background: #ffffff; box-shadow: 0 25px 80px rgba(67, 45, 28, 0.09); }
+
+/* ================================= AUTH CARD ================================= */ 
+.auth-card { display: flex; flex-direction: column; justify-content: center; padding: 60px; } .auth-heading { margin-bottom: 30px; } .auth-heading h1 { margin-bottom: 15px; font-family: "Playfair Display", serif; font-size: clamp(2.2rem, 4vw, 3rem); letter-spacing: -1px; } .auth-heading p { max-width: 430px; color: #746e68; font-size: 0.95rem; }
+
+/* ================================= FORM ================================= */ 
+.auth-form { display: flex; flex-direction: column; gap: 20px; } .form-group { display: flex; flex-direction: column; gap: 8px; } .form-group label { font-size: 0.85rem; font-weight: 700; } .form-group input { width: 100%; height: 52px; padding: 0 16px; border: 1px solid #ddd2c6; border-radius: 12px; outline: none; color: #25221f; background: #fffdf9; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .form-group input::placeholder { color: #aaa19a; } .form-group input:focus { border-color: #c95b2c; box-shadow: 0 0 0 4px rgba(201, 91, 44, 0.1); } .form-group small { color: #918982; font-size: 0.75rem; }
+
+
+/* ================================= SUBMIT BUTTON ================================= */ 
+.auth-submit { width: 100%; height: 54px; margin-top: 5px; border: none; border-radius: 100px; color: #ffffff; background: #c95b2c; font-weight: 700; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; } .auth-submit:hover { background: #a8451e; transform: translateY(-2px); }
+
+/* ================================= DIVIDER ================================= */ 
+.auth-divider { display: flex; align-items: center; gap: 15px; margin: 25px 0; color: #aaa19a; font-size: 0.8rem; } .auth-divider::before, .auth-divider::after { content: ""; flex: 1; height: 1px; background: #eadfd3; }
+
+/* ================================= FOOTER TEXT ================================= */ 
+.auth-footer-text { text-align: center; color: #746e68; font-size: 0.85rem; } .auth-footer-text a { color: #c95b2c; font-weight: 700; } 
+
+/* ================================= SIDE PANEL ================================= */ 
+.auth-side { position: relative; display: flex; align-items: center; justify-content: center; padding: 60px; overflow: hidden; color: white; background: radial-gradient( circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 30% ), linear-gradient( 145deg, #a8451e, #c95b2c ); } .auth-side::before { content: ""; position: absolute; width: 350px; height: 350px; right: -130px; top: -100px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); } .auth-side::after { content: ""; position: absolute; width: 250px; height: 250px; left: -120px; bottom: -80px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); } .auth-side-content { position: relative; z-index: 2; max-width: 350px; text-align: center; } .food-icon { display: grid; place-items: center; width: 80px; height: 80px; margin: 0 auto 30px; border-radius: 50%; background: rgba(255,255,255,0.15); font-size: 2.2rem; } .auth-side h2 { margin-bottom: 20px; font-family: "Playfair Display", serif; font-size: 3rem; } .auth-side h2 span { display: block; color: #ffe0ca; } .auth-side p { color: rgba(255,255,255,0.82); }
+
+/* ================================= LOGGED-IN NAV ================================= */ 
+.user-menu { display: flex; align-items: center; gap: 12px; } .user-email { max-width: 190px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #746e68; font-size: 0.8rem; font-weight: 600; } .user-menu form { margin: 0; } .logout-btn { padding: 8px 15px; border: 1px solid #e4d5c7; border-radius: 100px; color: #c95b2c; background: transparent; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: 0.2s ease; } .logout-btn:hover { color: white; background: #c95b2c; }
+
+/* ================================= GUEST AUTH BUTTONS ================================= */ 
+.auth-links { display: flex; align-items: center; gap: 8px; } .signup-btn, .login-btn { padding: 9px 17px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; } .signup-btn { color: white; background: #c95b2c; } .login-btn { border: 1px solid #e5d9cd; color: #25221f; background: white; } .signup-btn:hover { background: #a8451e; } .login-btn:hover { background: #f4eadb; }
+
+/* ================================= TABLET ================================= */
+ @media (max-width: 850px) { .auth-container { grid-template-columns: 1fr; max-width: 600px; } .auth-side { display: none; } .auth-card { padding: 50px; } }
+
+/* ================================= MOBILE ================================= */ 
+@media (max-width: 700px) { .auth-main { padding: 30px 0; } .auth-container { width: 92%; border-radius: 22px; } .auth-card { padding: 35px 25px; } .auth-nav { min-height: 70px; } .auth-nav-link { font-size: 0.75rem; } .auth-nav-link strong { display: block; margin-left: 0; } .auth-heading h1 { font-size: 2.2rem; } }
+
+/* ================================= SMALL PHONES ================================= */
+@media (max-width: 400px) { .auth-nav { gap: 10px; } .auth-nav .logo { font-size: 1.25rem; } .auth-card { padding: 30px 20px; } .auth-heading h1 { font-size: 2rem; } .form-group input { height: 50px; } }
+
+
+.dish-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #eee3d5;
+}
+
+.dish-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s ease;
+}
+
+.dish-card:hover .dish-image img {
+  transform: scale(1.05);
+}
+
+.dish-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.3),
+    transparent 55%
+  );
+}
+
+.country {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  left: 15px;
+
+  padding: 6px 11px;
+
+  border-radius: 50px;
+
+  color: var(--dark);
+  background: rgba(255, 255, 255, 0.92);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .dish-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .dish-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dish-image {
+    height: 260px;
+  }
 }

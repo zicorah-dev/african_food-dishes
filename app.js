@@ -39,7 +39,10 @@ const PORT = process.env.PORT || 5000
 
 // routes
 app.get("/{*splat}", checkUser);
-app.get("/", (req, res) => res.render("home"));
+app.get("/", requireAuth, (req, res) => res.render("africanfoods"));
+app.get("/dishes", requireAuth, (req, res) => res.render("dishes"));
+app.get("/about", requireAuth, (req, res) => res.render("about"));
+app.get("/contact", requireAuth, (req, res) => res.render("contact"));
 app.get("/africanfoods", requireAuth, (req, res) => res.render("africanfoods"));
 app.use(authRoutes);
 

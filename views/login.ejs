@@ -1,15 +1,69 @@
 <%- include ("partials/header"); -%>
 
-<form>
-  <h2>Log in</h2>
-  <label for="email">Email</label>
-  <input type="text" name="email" required />
-  <div class="email error"></div>
-  <label for="password">Password</label>
-  <input type="password" name="password" required />
-  <div class="password error"></div>
-  <button>Log in</button>
-</form>
+<body class="auth-page">
+  <header class="auth-header">
+    <div class="container auth-nav">
+      <!-- <a href="/" class="logo"> Afrika<span>Eats</span> </a> -->
+      <!-- <a href="/signup" class="auth-nav-link">
+        Don't have an account? <strong>Sign Up</strong>
+      </a> -->
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-container login-layout">
+      <div class="auth-side login-side">
+        <div class="auth-side-content">
+          <span class="food-icon"> 🌍 </span>
+          <h2>
+            Welcome
+            <span>back.</span>
+          </h2>
+
+          <p>Your next African food adventure is waiting for you.</p>
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-heading">
+          <span class="eyebrow"> WELCOME BACK </span>
+          <h1>Login to your account</h1>
+          <p>Continue your journey through African cuisine.</p>
+        </div>
+
+        <form class="auth-form">
+          <div class="form-group">
+            <h2>Log in</h2>
+            <label for="email">Email</label>
+            <input type="text" name="email" required autocomplete="email" />
+            <div class="email error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+            <div class="password error"></div>
+          </div>
+
+          <button class="auth-submit">Log in</button>
+        </form>
+
+        <div class="auth-divider">
+          <span>or</span>
+        </div>
+        <p class="auth-footer-text">
+          Don't have an account?
+          <a href="/signup"> Create one </a>
+        </p>
+      </div>
+    </div>
+  </main>
+</body>
 
 <script>
   const form = document.querySelector("form");
@@ -40,7 +94,7 @@
         passwordError.textContent = data.errors.password;
       }
       if (data.user) {
-        location.assign("/");
+        location.assign("africanfoods");
       }
     } catch (err) {
       console.log(err);
